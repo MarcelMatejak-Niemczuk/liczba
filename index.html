@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liczba</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Zaokrąglanie liczby</h2>
+    <label for="liczba">Wpisz liczbę dziesiętną:</label>
+    <input type="number" id="liczba" step="any">
+    <button onclick="zaokraglij()">Zaokrągl</button>
+    <div id="wynik"></div>
+
+    <script>
+        function zaokraglij() {
+            var liczba = parseFloat(document.getElementById("liczba").value);
+
+            if (Number.isInteger(liczba)) {
+                alert("Nie tak wpisz liczbę dziesiętną");
+                return false;
+            }
+            else
+
+            document.getElementById("wynik").innerHTML =
+                    "<p>Zaokrąglone w dół =  " + Math.floor(liczba) + "</p>" +
+                    "<p>Zaokrąglone w górę =  " + Math.ceil(liczba) + "</p>" +
+                    "<p>Zaokrąglone do liczby całkowitej =  " + Math.round(liczba) + "</p>";
+        }
+    </script>
+</body>
+</html>
